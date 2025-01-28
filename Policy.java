@@ -1,8 +1,7 @@
 public class Policy{
 
       private int policyNum, holderAge;
-      private String providerName, holderFirst, holderSecond;
-      private boolean smoker;
+      private String providerName, holderFirst, holderLast, smoker;
       private double holderHeight, holderWeight;
       
       public Policy(){
@@ -10,19 +9,19 @@ public class Policy{
          holderAge = 0;
          providerName = null;
          holderFirst = null;
-         holderSecond = null;
-         smoker = false;
+         holderLast = null;
+         smoker = null;
          holderHeight = 0.0;
          holderWeight = 0.0;
       }
       
-      public Policy (int num, String name, Strin first, String second,
-                     int age, boolean smoke, double height, double weight){
+      public Policy (int num, String name, String first, String last,
+                     int age, String smoke, double height, double weight){
          policyNum = num;
          holderAge = age;
          providerName = name;
          holderFirst = first;
-         holderSecond = second;
+         holderLast = last;
          smoker = smoke;
          holderHeight = height;
          holderWeight = weight;
@@ -49,7 +48,7 @@ public class Policy{
          return holderLast;
       }
       
-      public boolean getSmoker(){
+      public String getSmoker(){
          return smoker;
       }
       
@@ -78,10 +77,10 @@ public class Policy{
       }
       
       public void setLastName(String last){
-         holderSecond = second;
+         holderLast = last;
       }
       
-      public void setSmoker(boolean smoke){
+      public void setSmoker(String smoke){
          smoker = smoke;
       }
       
@@ -90,7 +89,7 @@ public class Policy{
       }
       
       public void setWeight(double weight){
-         holderWeight = Weight;
+         holderWeight = weight;
       }
       
       public double BMI(){
@@ -99,11 +98,11 @@ public class Policy{
       
       public double fee(){
       int BASE = 600;
-      double fee = base;
+      double fee = BASE;
       if(holderAge > 50){
          fee += 75;
       }
-      if(smoker){
+      if(smoker.equals("smoker")){
          fee += 100;
       }
       if(BMI()>35){
